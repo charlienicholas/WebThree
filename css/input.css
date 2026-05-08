@@ -4,6 +4,7 @@
 
 @theme {
     --font-main: "Montserrat", sans-serif;
+    --color-main: var(--color-indigo-600);
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
