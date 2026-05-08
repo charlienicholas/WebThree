@@ -4,7 +4,7 @@ themeBtn.addEventListener("click", () => {
   document.documentElement.classList.toggle("dark");
 });
 
-// Mobile Menu Logic
+// Mobile Hamburger Menu Logic
 const sideMenu = document.getElementById("side-menu");
 const openBtn = document.getElementById("menu-open");
 const closeBtn = document.getElementById("menu-close");
