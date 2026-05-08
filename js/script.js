@@ -23,12 +23,55 @@ if (backToTop) {
   });
 }
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        backToTop.classList.remove('opacity-0', 'pointer-events-none');
-        backToTop.classList.add('opacity-100');
-    } else {
-        backToTop.classList.add('opacity-0', 'pointer-events-none');
-        backToTop.classList.remove('opacity-100');
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    backToTop.classList.remove("opacity-0", "pointer-events-none");
+    backToTop.classList.add("opacity-100");
+  } else {
+    backToTop.classList.add("opacity-0", "pointer-events-none");
+    backToTop.classList.remove("opacity-100");
+  }
+});
+
+// Untuk navbar agar bisa deteksi section mana yang sedang aktif saat di scroll
+const sections = document.querySelectorAll("section");
+const desktopLinks = document.querySelectorAll(".nav-link");
+const mobileLinks = document.querySelectorAll(".nav-link-mobile");
+
+const observerOptions = {
+  root: null,
+  threshold: 0.4,
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const id = entry.target.getAttribute("id");
+
+      // Update Desktop Links
+      desktopLinks.forEach((link) => {
+        const isActive = link.getAttribute("data-section") === id;
+        link.classList.toggle("text-main", isActive);
+        link.classList.toggle("font-semibold", isActive);
+      });
+
+      // Update Mobile Links
+      mobileLinks.forEach((link) => {
+        const isActive = link.getAttribute("data-section") === id;
+        link.classList.toggle("text-main", isActive);
+        link.classList.toggle("font-semibold", isActive);
+      });
     }
+  });
+}, observerOptions);
+
+sections.forEach((section) => {
+  observer.observe(section);
+});
+
+mobileLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    // Panggil fungsi toggleMenu yang sudah kita buat sebelumnya
+    toggleMenu();
+  });
 });

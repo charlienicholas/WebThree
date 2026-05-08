@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth scroll-pt-20">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,16 +8,15 @@
   </head>
   <body class="font-main bg-white dark:bg-slate-900 transition-colors duration-500">
     <!-- Navbar Start -->
-    <nav class="fixed top-0 w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md z-50 border-b border-gray-200 dark:border-slate-600">
+    <nav class="sticky top-0 w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md z-50 border-b border-gray-200 dark:border-slate-600">
       <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <h1 class="font-bold text-2xl dark:text-white">Nicho<span class="text-main">Net</span></h1>
 
         <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600 dark:text-gray-300">
-          <li><a href="#" class="text-main">Home</a></li>
-          <li><a href="#" class="hover:text-main transition">About</a></li>
-          <li><a href="#" class="hover:text-main transition">Projects</a></li>
-          <li><a href="#" class="hover:text-main transition">Skills</a></li>
-          <li><a href="#" class="hover:text-main transition">Contact</a></li>
+          <li><a href="#home" class="nav-link text-main" data-section="home">Home</a></li>
+          <li><a href="#about" class="nav-link hover:text-main transition" data-section="about">About</a></li>
+          <li><a href="#skill" class="nav-link hover:text-main transition" data-section="skill">Skills</a></li>
+          <li><a href="#project" class="nav-link hover:text-main transition" data-section="project">Projects</a></li>
         </ul>
 
         <div class="flex items-center gap-4">
@@ -42,18 +41,17 @@
         </button>
 
         <ul class="mt-12 space-y-6 text-lg font-semibold dark:text-white">
-          <li><a href="#home" class="target:text-main">Home</a></li>
-          <li><a href="#about" class="target:text-main">About</a></li>
-          <li><a href="#skill" class="target:text-main">Skills</a></li>
-          <li><a href="#project" class="target:text-main">Projects</a></li>
-          <li><a href="#contact" class="target:text-main">Contact</a></li>
+          <li><a href="#home" class="nav-link-mobile target:text-main" data-section="home">Home</a></li>
+          <li><a href="#about" class="nav-link-mobile target:text-main" data-section="about">About</a></li>
+          <li><a href="#skill" class="nav-link-mobile target:text-main" data-section="skill">Skills</a></li>
+          <li><a href="#project" class="nav-link-mobile target:text-main" data-section="project">Projects</a></li>
         </ul>
       </div>
     </div>
     <!-- Navbar End -->
 
     <!-- Section Main Start -->
-    <section class="max-w-7xl mt-20 mx-auto px-6 py-12">
+    <section id="home" class="max-w-7xl mx-auto px-6 py-12">
       <div class="relative overflow-hidden rounded-3xl bg-slate-100 dark:bg-slate-800/50 p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-12">
         <div class="flex flex-col md:flex-row items-center md:items-start gap-8 z-10">
           <div class="w-58 h-58 rounded-full overflow-hidden shrink-0">
@@ -61,11 +59,11 @@
           </div>
 
           <div class="text-center md:text-left space-y-4">
-            <span class="inline-block px-4 py-1 rounded-full bg-indigo-100 text-indigo-600 text-md font-semibold"> Hello, I'm </span>
+            <span class="inline-block px-4 py-1 rounded-full bg-indigo-100 text-main text-md font-semibold"> Hello, I'm </span>
 
             <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white">Charlie Nicholas</h1>
 
-            <p class="text-lg font-medium text-indigo-600 dark:text-indigo-400">Learner & Web Developer</p>
+            <p class="text-lg font-medium text-main dark:text-indigo-400">Learner & Web Developer</p>
 
             <p class="max-w-md text-slate-600 dark:text-slate-400 leading-relaxed">Saya sedang belajar HTML, CSS, JavaScript, dan berlatih membuat website yang fungsional dan menarik.</p>
 
@@ -133,9 +131,9 @@
     <!-- Section About End -->
 
     <!-- Section Skills Start -->
-    <section id="skills" class="max-w-7xl mx-auto px-6 py-12">
+    <section id="skill" class="max-w-7xl mx-auto px-6 py-12">
       <h2 class="text-3xl font-bold text-slate-900 dark:text-white">Skills</h2>
-      <div class="w-12 h-1 bg-indigo-600 mt-2 mb-8"></div>
+      <div class="w-12 h-1 bg-indigo-600 mt-2 mb-8 rounded-2xl"></div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <div class="flex flex-col items-center p-8 bg-white dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm">
@@ -172,9 +170,9 @@
     <!-- Section Skills End -->
 
     <!-- Section Project Start -->
-    <section id="projects" class="max-w-7xl mx-auto px-6 py-12">
+    <section id="project" class="max-w-7xl mx-auto px-6 py-12">
       <h2 class="text-3xl font-bold text-slate-900 dark:text-white">Projects</h2>
-      <div class="w-12 h-1 bg-indigo-600 mt-2 mb-8"></div>
+      <div class="w-12 h-1 bg-indigo-600 mt-2 mb-8 rounded-2xl"></div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="flex items-center gap-6 p-6 bg-white dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm">
@@ -189,7 +187,7 @@
           <div>
             <h3 class="text-xl font-bold dark:text-white">Web Kedai Kopi</h3>
             <p class="text-slate-500 text-sm mb-2">Membuat Web Kedai Kopi dengan HTML, CSS, dan Javascript dari tutorial WPU.</p>
-            <a href="https://charlienicholas.github.io/Web-Kedai-Kopi-WPU/" class="text-indigo-600 font-semibold text-sm inline-flex items-center gap-1 hover:underline" target="_blank"> Lihat Project <span>&rarr;</span> </a>
+            <a href="https://charlienicholas.github.io/Web-Kedai-Kopi-WPU/" class="text-main font-semibold text-sm inline-flex items-center gap-1 hover:underline" target="_blank"> Lihat Project <span>&rarr;</span> </a>
           </div>
         </div>
 
@@ -206,7 +204,7 @@
           <div>
             <h3 class="text-xl font-bold dark:text-white">Kalkulator Sederhana</h3>
             <p class="text-slate-500 text-sm mb-2">Web kalkulator sederhana dengan menggunakan HTML, CSS, dan Javascript.</p>
-            <a href="https://charlienicholas.github.io/Kalkulator-Sederhana/" class="text-indigo-600 font-semibold text-sm inline-flex items-center gap-1 hover:underline" target="_blank"> Lihat Project <span>&rarr;</span> </a>
+            <a href="https://charlienicholas.github.io/Kalkulator-Sederhana/" class="text-main font-semibold text-sm inline-flex items-center gap-1 hover:underline" target="_blank"> Lihat Project <span>&rarr;</span> </a>
           </div>
         </div>
       </div>
